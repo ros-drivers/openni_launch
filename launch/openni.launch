@@ -57,7 +57,7 @@
     <!-- Start nodelet manager in top-level namespace -->
     <arg name="manager" value="$(arg camera)_nodelet_manager" />
     <arg name="debug" default="false" /> <!-- Run manager in GDB? -->
-    <include file="$(find openni_launch)/launch/includes/manager.launch">
+    <include file="$(find rgbd_launch)/launch/includes/manager.launch">
       <arg name="name"                value="$(arg manager)" />
       <arg name="debug"               value="$(arg debug)" />
       <arg name="num_worker_threads"  value="$(arg num_worker_threads)" />
@@ -83,7 +83,7 @@
     </include>
     
     <!-- Load standard constellation of processing nodelets -->
-    <include file="$(find openni_launch)/launch/includes/processing.launch">
+    <include file="$(find rgbd_launch)/launch/includes/processing.launch">
       <arg name="manager"                         value="$(arg manager)" />
       <arg name="rgb"                             value="$(arg rgb)" />
       <arg name="ir"                              value="$(arg ir)" />
@@ -103,7 +103,7 @@
 
   <!-- Load reasonable defaults for the relative pose between cameras -->
   <include if="$(arg publish_tf)"
-	   file="$(find openni_launch)/launch/kinect_frames.launch">
+	   file="$(find rgbd_launch)/launch/kinect_frames.launch">
     <arg name="camera" value="$(arg camera)" />
   </include>
 
