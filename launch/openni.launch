@@ -85,6 +85,7 @@
     <!-- Load standard constellation of processing nodelets -->
     <include file="$(find openni_launch)/launch/includes/processing.launch">
       <arg name="manager"                         value="$(arg manager)" />
+      <arg name="depth_registration"              value="$(arg depth_registration)" />
       <arg name="rgb"                             value="$(arg rgb)" />
       <arg name="ir"                              value="$(arg ir)" />
       <arg name="depth"                           value="$(arg depth)" />
