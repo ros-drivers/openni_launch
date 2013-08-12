@@ -58,7 +58,7 @@
     <!-- Start nodelet manager in top-level namespace -->
     <arg name="manager" value="$(arg camera)_nodelet_manager" />
     <arg name="debug" default="false" /> <!-- Run manager in GDB? -->
-    <include file="$(find rgbd_launch)/launch/includes/manager.launch">
+    <include file="$(find rgbd_launch)/launch/includes/manager.launch.xml">
       <arg name="name"                value="$(arg manager)" />
       <arg name="debug"               value="$(arg debug)" />
       <arg name="num_worker_threads"  value="$(arg num_worker_threads)" />
@@ -66,7 +66,7 @@
 
     <!-- Load driver -->
     <include if="$(arg load_driver)"
-	     file="$(find openni_launch)/launch/includes/device.launch">
+	     file="$(find openni_launch)/launch/includes/device.launch.xml">
       <!-- Could really use some syntactic sugar for this -->
       <arg name="manager"               value="$(arg manager)" />
       <arg name="device_id"             value="$(arg device_id)" />
@@ -84,7 +84,7 @@
     </include>
     
     <!-- Load standard constellation of processing nodelets -->
-    <include file="$(find rgbd_launch)/launch/includes/processing.launch">
+    <include file="$(find rgbd_launch)/launch/includes/processing.launch.xml">
       <arg name="manager"                         value="$(arg manager)" />
       <arg name="depth_registration"              value="$(arg depth_registration)" />
       <arg name="rgb"                             value="$(arg rgb)" />
