@@ -44,6 +44,8 @@
   <arg name="depth_registered_processing"     default="true"/>
   <arg name="disparity_processing"            default="true"/>
   <arg name="disparity_registered_processing" default="true"/>
+  <arg name="hw_registered_processing"        default="true" />
+  <arg name="sw_registered_processing"        default="true" />
 
   <!-- Disable bond topics by default -->
   <arg name="bond" default="false" /> <!-- DEPRECATED, use respawn arg instead -->
@@ -86,7 +88,6 @@
     <!-- Load standard constellation of processing nodelets -->
     <include file="$(find rgbd_launch)/launch/includes/processing.launch.xml">
       <arg name="manager"                         value="$(arg manager)" />
-      <arg name="depth_registration"              value="$(arg depth_registration)" />
       <arg name="rgb"                             value="$(arg rgb)" />
       <arg name="ir"                              value="$(arg ir)" />
       <arg name="depth"                           value="$(arg depth)" />
@@ -99,6 +100,8 @@
       <arg name="depth_registered_processing"     value="$(arg depth_registered_processing)" />
       <arg name="disparity_processing"            value="$(arg disparity_processing)" />
       <arg name="disparity_registered_processing" value="$(arg disparity_registered_processing)" />
+      <arg name="hw_registered_processing"        value="$(arg hw_registered_processing)" />
+      <arg name="sw_registered_processing"        value="$(arg sw_registered_processing)" />
     </include>
   
   </group> <!-- camera -->
