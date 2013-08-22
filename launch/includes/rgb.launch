@@ -1,37 +1,20 @@
-<!-- Load processing nodelets for the RGB camera -->
 <launch>
 
-  <arg name="manager" />
-  <arg name="respawn" default="false" />
-  <arg name="rgb" />
-  <!-- TODO Arguments for debayer, interpolation methods? -->
+  <!-- have all the old parameters to prevent roslaunch errors -->
+  <arg name="manager" default="" />
+  <arg name="respawn" default="" />
+  <arg name="rgb" default="" />
 
-  <arg     if="$(arg respawn)" name="bond" value="" />
-  <arg unless="$(arg respawn)" name="bond" value="--no-bond" />
-
-  <!-- Debayered images -->
-  <node pkg="nodelet" type="nodelet" name="debayer"
-        args="load image_proc/debayer $(arg manager) $(arg bond)"
-        respawn="$(arg respawn)">
-    <remap from="image_raw"   to="$(arg rgb)/image_raw" />
-    <remap from="image_mono"  to="$(arg rgb)/image_mono" />
-    <remap from="image_color" to="$(arg rgb)/image_color" />
-  </node>
-
-  <!-- Monochrome rectified image -->
-  <node pkg="nodelet" type="nodelet" name="rectify_mono"
-        args="load image_proc/rectify $(arg manager) $(arg bond)"
-        respawn="$(arg respawn)">
-    <remap from="image_mono" to="$(arg rgb)/image_mono" />
-    <remap from="image_rect" to="$(arg rgb)/image_rect_mono" />
-  </node>
-
-  <!-- Color rectified image -->
-  <node pkg="nodelet" type="nodelet" name="rectify_color"
-        args="load image_proc/rectify $(arg manager) $(arg bond)"
-        respawn="$(arg respawn)">
-    <remap from="image_mono" to="$(arg rgb)/image_color" />
-    <remap from="image_rect" to="$(arg rgb)/image_rect_color" />
+  <!-- deprecation notice -->
+  <node name="rgb_deprecated"
+        pkg="rgbd_launch"
+        type="hydro-upgrade-notice"
+        required="true">
+    <param name="name" value="rgb.launch" />
+    <param name="from_pkg" value="openni_launch" />
+    <param name="to_pkg" value="rgbd_launch" />
+    <param name="from_pkg_path" value="launch/includes/rgb.launch" />
+    <param name="to_pkg_path" value="launch/includes/rgb.launch.xml" />
   </node>
 
 </launch>
