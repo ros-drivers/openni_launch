@@ -1,87 +1,30 @@
-<!-- Load full set of processing nodelets for an OpenNI device -->
 <launch>
 
-  <!-- Name of nodelet manager -->
-  <arg name="manager" />
+  <!-- have all the old parameters to prevent roslaunch errors -->
+  <arg name="manager" default="" />
+  <arg name="respawn" default="" />
+  <arg name="rgb" default="" />
+  <arg name="ir" default="" />
+  <arg name="depth" default="" />
+  <arg name="depth_registered" default="" />
+  <arg name="projector" default="" />
+  <arg name="rgb_processing" default="" />
+  <arg name="ir_processing" default="" />
+  <arg name="depth_processing" default="" />
+  <arg name="depth_registered_processing" default="" />
+  <arg name="disparity_processing" default="" />
+  <arg name="disparity_registered_processing" default="" />
 
-  <!-- Launch robustly (bonds + respawn) or not? -->
-  <arg name="respawn" default="false" />
-  <arg     if="$(arg respawn)" name="bond" value="" />
-  <arg unless="$(arg respawn)" name="bond" value="--no-bond" />
-  
-  <!-- Processing modules -->
-  <arg name="rgb_processing" />
-  <arg name="ir_processing" />
-  <arg name="depth_processing" />
-  <arg name="depth_registered_processing" />
-  <arg name="disparity_processing" />
-  <arg name="disparity_registered_processing" />
-
-  <!-- Is device enabled registration enabled? -->
-  <arg name="depth_registration" default="false" />
-  
-  <!-- Remapping arguments -->
-  <arg name="rgb"              default="rgb" />
-  <arg name="ir"               default="ir" />
-  <arg name="depth"            default="depth" />
-  <arg name="depth_registered" default="depth_registered" />
-  <arg name="projector"        default="projector" />
-
-  <!-- RGB processing -->
-  <include if="$(arg rgb_processing)"
-           file="$(find openni_launch)/launch/includes/rgb.launch">
-    <arg name="manager" value="$(arg manager)" />
-    <arg name="respawn" value="$(arg respawn)" />
-    <arg name="rgb"     value="$(arg rgb)" />
-  </include>
-
-  <!-- IR processing -->
-  <include if="$(arg ir_processing)"
-           file="$(find openni_launch)/launch/includes/ir.launch">
-    <arg name="manager" value="$(arg manager)" />
-    <arg name="respawn" value="$(arg respawn)" />
-    <arg name="ir"      value="$(arg ir)" />
-  </include>
-
-  <!-- Unregistered depth processing -->
-  <group unless="$(arg depth_registration)">
-    <include if="$(arg depth_processing)"
-      file="$(find openni_launch)/launch/includes/depth.launch">
-      <arg name="manager" value="$(arg manager)" />
-      <arg name="respawn" value="$(arg respawn)" />
-      <arg name="depth"   value="$(arg depth)" />
-    </include>
-  </group>
-
-  <!-- Depth-to-RGB registration and processing -->
-  <include if="$(arg depth_registered_processing)"
-           file="$(find openni_launch)/launch/includes/depth_registered.launch">
-    <arg name="manager"            value="$(arg manager)" />
-    <arg name="depth_registration" value="$(arg depth_registration)" />
-    <arg name="rgb"                value="$(arg rgb)" />
-    <arg name="depth"              value="$(arg depth)" />
-    <arg name="depth_registered"   value="$(arg depth_registered)" />
-    <arg name="respawn"            value="$(arg respawn)" />
-  </include>
-
-  <!-- Unregistered disparity image -->
-  <group unless="$(arg depth_registration)">
-    <include if="$(arg disparity_processing)"
-      file="$(find openni_launch)/launch/includes/disparity.launch">
-      <arg name="manager"   value="$(arg manager)" />
-      <arg name="depth"     value="$(arg depth)" />
-      <arg name="projector" value="$(arg projector)" />
-      <arg name="respawn"   value="$(arg respawn)" />
-    </include>
-  </group>
-
-  <!-- Registered disparity image -->
-  <include if="$(arg disparity_registered_processing)"
-           file="$(find openni_launch)/launch/includes/disparity.launch">
-    <arg name="manager"   value="$(arg manager)" />
-    <arg name="depth"     value="$(arg depth_registered)" />
-    <arg name="projector" value="$(arg projector)" />
-    <arg name="respawn"   value="$(arg respawn)" />
-  </include>
+  <!-- deprecation notice -->
+  <node name="processing_deprecated"
+        pkg="rgbd_launch"
+        type="hydro-upgrade-notice"
+        required="true">
+    <param name="name" value="processing.launch" />
+    <param name="from_pkg" value="openni_launch" />
+    <param name="to_pkg" value="rgbd_launch" />
+    <param name="from_pkg_path" value="launch/includes/processing.launch" />
+    <param name="to_pkg_path" value="launch/includes/processing.launch.xml" />
+  </node>
 
 </launch>
