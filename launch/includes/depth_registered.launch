@@ -1,18 +1,16 @@
 <launch>
 
   <!-- have all the old parameters to prevent roslaunch errors -->
-  <arg name="manager" default="" />
-  <arg name="rgb" default="" />
-  <arg name="depth" default="" />
-  <arg name="publish_metric_rect" default="" />
-  <arg name="allow_software_registration" default="" />
   <arg name="allow_hardware_registration" default="" />
-  <arg name="points_xyzrgb" default="" />
-  <arg name="respawn" default="" />
-  <arg name="rgb" default="" />
+  <arg name="allow_software_registration" default="" />
   <arg name="depth" default="" />
   <arg name="depth_registered" default="" />
   <arg name="depth_registration" default="" />
+  <arg name="manager" default="" />
+  <arg name="points_xyzrgb" default="" />
+  <arg name="publish_metric_rect" default="" />
+  <arg name="respawn" default="" />
+  <arg name="rgb" default="" />
   <arg name="suffix" default="" />
 
   <!-- deprecation notice -->
