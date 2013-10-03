@@ -9,3 +9,10 @@ install(DIRECTORY launch
         DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/
 )
 
+# unit tests are enabled selectively
+if (CATKIN_ENABLE_TESTING)
+  # check that all launch file dependencies are declared correctly
+  find_package(roslaunch REQUIRED)
+  roslaunch_add_file_check(launch)
+  roslaunch_add_file_check(launch/includes)
+endif (CATKIN_ENABLE_TESTING)

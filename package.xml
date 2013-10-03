@@ -19,7 +19,9 @@
   
   <build_depend>openni_camera</build_depend>
   <build_depend>rgbd_launch</build_depend>
+  <build_depend>roslaunch</build_depend> <!-- unit test only -->
 
+  <run_depend>nodelet</run_depend>
   <run_depend>openni_camera</run_depend>
   <run_depend>rgbd_launch</run_depend>
 
