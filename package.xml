@@ -17,9 +17,8 @@
 
   <buildtool_depend>catkin</buildtool_depend>
   
-  <build_depend>openni_camera</build_depend>
-  <build_depend>rgbd_launch</build_depend>
-  <build_depend>roslaunch</build_depend> <!-- unit test only -->
+  <!-- test dependency -->
+  <build_depend>roslaunch</build_depend> 
 
   <run_depend>nodelet</run_depend>
   <run_depend>openni_camera</run_depend>
