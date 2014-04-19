@@ -2,8 +2,8 @@
 Changelog for package openni_launch
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.9.5 (2014-04-18)
+------------------
 * Test the ROS launch files, fix some errors (`#10
   <https://github.com/ros-drivers/openni_launch/issues/10>`_).
 * Fix errors found by roslaunch unit test (`#10
