@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.8.3)
 project(openni_launch)
 
-find_package(catkin)
+find_package(catkin REQUIRED)
 
 catkin_package()
 
@@ -15,4 +15,4 @@ if (CATKIN_ENABLE_TESTING)
   find_package(roslaunch REQUIRED)
   roslaunch_add_file_check(launch)
   roslaunch_add_file_check(launch/includes)
-endif (CATKIN_ENABLE_TESTING)
+endif ()
