@@ -2,8 +2,8 @@
 Changelog for package openni_launch
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.9.6 (2015-10-27)
+------------------
 * [feat] adjust frame ids to TF2
 * [fix] Removes the leading '/' from the TF frames in case tf_prefix is empty, which fixes this error:
   [ WARN] [1432284298.914340788]: TF2 exception:
