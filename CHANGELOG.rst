@@ -2,8 +2,8 @@
 Changelog for package openni_launch
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.9.7 (2015-11-15)
+------------------
 * 1st ROS Jade release
 * [sys] Add a simple travis config
 * Contributors: Isaac I.Y. Saito
