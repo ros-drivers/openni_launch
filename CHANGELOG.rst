@@ -2,6 +2,12 @@
 Changelog for package openni_launch
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* 1st ROS Jade release
+* [sys] Add a simple travis config
+* Contributors: Isaac I.Y. Saito
+
 1.9.6 (2015-10-27)
 ------------------
 * [feat] adjust frame ids to TF2
