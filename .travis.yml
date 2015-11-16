@@ -7,6 +7,10 @@ env:
     - ROS_DISTRO="indigo" BIN_REPOSITORY=http://packages.ros.org/ros-shadow-fixed/ubuntu
     - ROS_DISTRO="jade"   BIN_REPOSITORY=http://packages.ros.org/ros/ubuntu
     - ROS_DISTRO="jade"   BIN_REPOSITORY=http://packages.ros.org/ros-shadow-fixed/ubuntu
+matrix:
+  allow_failures:
+    - env: ROS_DISTRO="jade"   BIN_REPOSITORY=http://packages.ros.org/ros/ubuntu
+    - env: ROS_DISTRO="jade"   BIN_REPOSITORY=http://packages.ros.org/ros-shadow-fixed/ubuntu
 install:
   - export CI_SOURCE_PATH=$(pwd)
   - export REPOSITORY_NAME=${PWD##*/}
