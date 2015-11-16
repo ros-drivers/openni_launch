@@ -7,8 +7,7 @@
      and (registered) point clouds.
     </description>
   <author>Patrick Mihelich</author>
-  <maintainer email="jkammerl@willowgarage.com">Julius Kammerl</maintainer>
-  <maintainer email="jbinney@willowgarage.com">Jon Binney</maintainer>
+  <maintainer email="130s@2000.jukuin.keio.ac.jp">Isaac I.Y. Saito</maintainer>
   <license>BSD</license>
 
   <url type="website">http://www.ros.org/wiki/openni_launch</url>
