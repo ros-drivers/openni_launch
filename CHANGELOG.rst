@@ -2,8 +2,8 @@
 Changelog for package openni_launch
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+1.9.8 (2016-05-07)
+------------------
 * [feat] adding depth_registered_filtered injection `#26 <https://github.com/ros-drivers/openni_launch/issues/26>`_
 * [sys][Travis CI] Update config to using industrial_ci with Prerelease Test. `#28 <https://github.com/ros-drivers/openni_launch/issues/28>`_
 * Contributors: Jonathan Bohren, Isaac I.Y. Saito
