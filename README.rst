@@ -1,3 +1,9 @@
+==================
+Repository MOVED!
+==================
+
+`openni_launch` package is moved to https://github.com/ros-drivers/openni_camera/ as of `openni_camera#57 <https://github.com/ros-drivers/openni_camera/pull/57>`_. This repo will remain as it is for backward compatibility.
+
 Overview
 ========
 
